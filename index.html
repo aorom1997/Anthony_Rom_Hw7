@@ -1,0 +1,89 @@
+<!--
+Name: Anthony Rom
+Email: anthony_rom@student.uml.edu
+Affiliation: UMass Lowell Senior; Computer Science Major, UTeach Minor
+Date: November 27, 2020
+Description: This is HTML file is for HW7 to set the content of the page. The changes I made were to give
+the form sliders that that changed based on text input and vice versa
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Multiplication table</title>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+    <body>
+
+      <!-- Jumbotron -->
+      <div class="jumbotron text-center">
+        <div class="container">
+          <h1>Multiplication Table</h1>
+        </div>
+      </div>
+
+      <!-- Forms -->
+      <div class="container">
+         <form id="multiply">
+            <div class="form-group">
+               <label for="minColumnValue">Min Column Value</label>
+               <input class="inputValue" name="minColumn" id="minColumn" type="number" class="form-control"  placeholder="Use slider or enter a value between -50 and 50." oninput="minColumnSlider.value=minColumn.value">
+               <div class="slidecontainer">
+                 <input type="range" id="minColumnSlider" min="-50" max="50" value="0" class="slider" id="minColumnSlider" oninput="minColumn.value=minColumnSlider.value"">
+               </div>
+
+            </div>
+           <div class="form-group">
+              <label for="maxColumnValue">Max Column Value</label>
+              <input class="inputValue"name="maxColumn" id="maxColumn" type="number" class="form-control"  placeholder="Use slider or enter a value between -50 and 50." oninput="maxColumnSlider.value = maxColumn.value">
+              <div class="slidecontainer">
+                <input type="range" id="maxColumnSlider" min="-50" max="50" value="0" class="slider" id="maxColumnSlider" oninput="maxColumn.value=maxColumnSlider.value"">
+              </div>
+            </div>
+
+           <div class="form-group">
+              <label for="minRowValue">Min Row Value</label>
+              <input class="inputValue" name="minRow" id="minRow" type="number" class="form-control" placeholder="Use slider or enter a value between -50 and 50." oninput="minRowSlider.value = minRow.value">
+              <div class="slidecontainer">
+                <input type="range" id="minRowSlider" min="-50" max="50" value="0" class="slider" id="minRowSlider" oninput="minRow.value = minRowSlider.value"">
+              </div>
+           </div>
+
+          <div class="form-group">
+              <label for="maxRowValue">Max Row Value</label>
+              <input class="inputValue" name="maxRow" id="maxRow" type="number" class="form-control" placeholder="Use slider or enter a value between -50 and 50." oninput="maxRowSlider.value = maxRow.value">
+              <div class="slidecontainer">
+                <input type="range" id="maxRowSlider" min="-50" max="50" value="0" class="slider" id="maxRowSlider" oninput="maxRow.value = maxRowSlider.value"">
+              </div>
+          </div>
+
+           <button type="button " class="btn btn-info" onclick="getData()" >Generate a table</button>
+           <button type="button " class="btn btn-info" onclick="save()" >Save</button>
+        </form>
+        <hr>
+     </div>
+
+     <!-- Table  -->
+     <div class="container">
+           <table class="table table-bordered text-center" id="Table">
+           </table>
+     </div>
+
+     <!-- Tabs -->
+
+
+     <script
+         src="https://code.jquery.com/jquery-3.4.1.js"
+         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+         crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+      <script src="js/main.js"></script>
+  </body>
+</html>
